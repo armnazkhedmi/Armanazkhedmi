@@ -1,0 +1,11 @@
+{
+  "name": "أرمناز الخدمي",
+  "short_name": "أرمناز",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050711",
+  "theme_color": "#070a14",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": []
+}

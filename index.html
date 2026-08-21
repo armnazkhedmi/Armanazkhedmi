@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#070a14">
+<link rel="manifest" href="manifest.webmanifest">
+<title>أرمناز الخدمي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient a1"></div><div class="ambient a2"></div><div class="ambient a3"></div>
+
+<div id="app">
+  <div class="mobile-app">
+    <header class="m-head">
+      <div class="brand"><div class="brand-mark">أ</div><div><strong>أرمناز الخدمي</strong><small>خدمات أهالي أرمناز بين يديك</small></div></div>
+      <div class="head-icons"><button id="adminOpen" title="الإدارة">⚙</button><button id="themeBtn">◐</button></div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-scene"><div class="sun-glow"></div><div class="mount m1"></div><div class="mount m2"></div><div class="village"></div></div>
+      <div class="hero-glass"><div class="temp" id="weatherTemp">--° <span>☀</span></div><strong id="weatherDesc">جارٍ التحميل</strong><small id="weatherRange">أرمناز</small></div>
+      <div class="hero-location">⌖ أرمناز - إدلب</div><div class="pager"><i></i><i class="active"></i><i></i></div>
+    </section>
+
+    <div id="offlineBanner" class="offline hidden">⚠ لا يوجد اتصال — يتم عرض آخر بيانات محفوظة</div>
+    <section id="deathBanner" class="death-banner hidden"></section>
+
+    <section class="cards">
+      <button class="service emergency" data-section="emergency"><span class="icon3d">☎</span><b>مركز الطوارئ</b><small>اتصل فوراً</small><em></em></button>
+      <button class="service exchange" data-section="rates"><span class="icon3d">＄</span><b>أسعار الصرف</b><small id="rateMini">جارٍ التحميل</small><em></em></button>
+      <button class="service pharmacy" data-section="pharmacy"><span class="icon3d">✚</span><b>الصيدلية المناوبة</b><small id="pharmacyMini">جارٍ التحميل</small><em></em></button>
+      <button class="service mourning" data-section="death"><span class="icon3d">♨</span><b>الوفيات والعزاء</b><small id="deathMini">إعلانات اليوم</small><em></em></button>
+      <button class="service prayer" data-section="prayer"><span class="icon3d">☪</span><b>مواقيت الصلاة</b><small id="prayerMini">جارٍ التحميل</small><em></em></button>
+      <button class="service weather" data-section="weather"><span class="icon3d">☁</span><b>الطقس</b><small>أرمناز</small><em></em></button>
+      <button class="service clinics" data-section="clinics"><span class="icon3d">♧</span><b>العيادات</b><small id="clinicMini">جارٍ التحميل</small><em></em></button>
+      <button class="service more" data-section="more"><span class="icon3d">•••</span><b>المزيد من الخدمات</b><small>معلومات التطبيق</small><em></em></button>
+    </section>
+
+    <nav class="bottom"><button class="selected" data-section="home">⌂<small>الرئيسية</small></button><button data-section="rates">＄<small>الصرف</small></button><button data-section="pharmacy">✚<small>الصيدلية</small></button><button data-section="more">•••<small>المزيد</small></button></nav>
+  </div>
+</div>
+
+<div id="modal" class="modal hidden"><div class="modal-card"><button class="close" id="modalClose">×</button><div id="modalBody"></div></div></div>
+
+<div id="admin" class="admin-ui hidden">
+  <aside class="side">
+    <div class="admin-brand"><div class="brand-mark">أ</div><div><strong>أرمناز الخدمي</strong><small>لوحة التحكم</small></div></div>
+    <nav id="adminNav">
+      <button class="active" data-admin="dashboard">⌂ <span>الرئيسية</span></button>
+      <button data-admin="rates">＄ <span>أسعار الصرف</span></button>
+      <button data-admin="pharmacy">✚ <span>الصيدلية</span></button>
+      <button data-admin="death">♨ <span>الوفيات والعزاء</span></button>
+      <button data-admin="emergency">☎ <span>الطوارئ</span></button>
+      <button data-admin="clinics">♧ <span>العيادات</span></button>
+    </nav><button class="logout" id="logoutBtn">↪ تسجيل خروج</button>
+  </aside>
+  <main class="admin-main">
+    <header class="admin-head"><div><h1 id="adminTitle">لوحة الإدارة</h1><p id="adminSub">البيانات متزامنة مع Firebase</p></div><div class="admin-tools"><button id="adminRefresh">↻</button><button id="adminClose">عرض الموقع</button></div></header>
+    <div id="adminContent"></div>
+  </main>
+</div>
+
+<div id="login" class="modal hidden"><div class="modal-card login-card"><button class="close" id="loginClose">×</button><div class="brand center"><div class="brand-mark">أ</div><div><strong>دخول المدير</strong><small>لوحة إدارة أرمناز الخدمي</small></div></div><input id="email" type="email" placeholder="البريد الإلكتروني"><input id="password" type="password" placeholder="كلمة المرور"><button class="primary" id="loginBtn">تسجيل الدخول</button><p id="loginMsg"></p></div></div>
+<div id="toast"></div>
+<script type="module" src="app.js"></script>
+</body></html>
