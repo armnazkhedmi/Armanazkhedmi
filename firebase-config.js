@@ -1,13 +1,3 @@
-// ضع بيانات مشروع Firebase هنا.
-// Firebase Console → Project settings → Your apps → Web app
-export const firebaseConfig = {
-  apiKey: "PUT_YOUR_API_KEY_HERE",
-  authDomain: "PUT_YOUR_PROJECT.firebaseapp.com",
-  projectId: "PUT_YOUR_PROJECT_ID_HERE",
-  storageBucket: "PUT_YOUR_PROJECT.firebasestorage.app",
-  messagingSenderId: "PUT_YOUR_MESSAGING_SENDER_ID_HERE",
-  appId: "PUT_YOUR_APP_ID_HERE"
-};
-
-// مفتاح OpenWeather اختياري. إذا تركته فارغًا سيبقى الطقس من آخر قراءة محفوظة.
-export const OPENWEATHER_API_KEY = "";
+// بعد إنشاء Firebase ضع Web App Config هنا. لا تضع Service Account أو private key.
+export const firebaseConfig={apiKey:'YOUR_API_KEY',authDomain:'YOUR_PROJECT.firebaseapp.com',projectId:'YOUR_PROJECT_ID',storageBucket:'YOUR_PROJECT.firebasestorage.app',messagingSenderId:'YOUR_SENDER_ID',appId:'YOUR_APP_ID'};
+export const OPENWEATHER_API_KEY='YOUR_OPENWEATHER_KEY';
